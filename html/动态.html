@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../css/动态.css">
 	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/wangEditor.min.js"></script>
 </head>
 <body>
 <!--导航-->
@@ -23,12 +24,12 @@
 		</div>
 	</div>
 	<div class="navigation_xx">
-		<div class="xx_div">
+		<div class="dream">
 			<img src="../images/ty-icon-light.png" alt="" class="dream">
 			<br>
 			<span>想法</span>
 		</div>
-		<div class="xx_div">
+		<div class="xx_div11">
 			<img src="../images/ty-icon-log.png" alt="" class = "journal">
 			<br>
 			<span>日志</span>
@@ -255,6 +256,42 @@
 			</span>
 		</div>
 	</div>
+	<div class = "popup">
+		<div class = "popup_top">
+			<img src="../images/P~GJ)GRD@JQ0XSH[O)GDN$V.png" alt="" class = "user_picture"><span class = "color1">发布到梦想</span><a href="#" class = "user_future"><span class = "dream">梦</span> 请选择梦想</a>
+		</div>
+		<div class ="text_div">
+			<textarea placeholder="分享你的追梦历程" class="lala">
+			</textarea>
+		</div>
+		<div class= "popup_fotter">
+			<a href="#" class = "cancel">取消</a><a href="#" class = "determine">确定</a>
+			<div class = "camery"><img src="../images/%ZXFH7H(C][2YNQCV9YF6LW.png"></div>
+		</div>
+	</div>
+	<div class = "jihua">
+		<div class = "popup_top">
+			<img src="../images/P~GJ)GRD@JQ0XSH[O)GDN$V.png" alt="" class = "user_picture"><span class = "color1">发布到梦想</span><a href="#" class = "user_future"><span class = "dream">梦</span> 请选择梦想</a>
+		</div>
+		<div class ="text_div">
+			<textarea placeholder="为实现梦想，你计划做什么呢" class="lala">
+			</textarea>
+		</div>
+		<div class= "popup_fotter">
+			<a href="#" class = "cancel">取消</a><a href="#" class = "determine">确定</a>
+		</div>
+	</div>
+	<div class="sub_text">
+		<div class = "popup_top">
+			<img src="../images/P~GJ)GRD@JQ0XSH[O)GDN$V.png" alt="" class = "user_picture"><span class = "color1">发布到梦想</span><a href="#" class = "user_future"><span class = "dream">梦</span> 请选择梦想</a>
+		</div>
+		<div class="biaoti">
+			<input type="text" value="起个标题吧">
+		</div>
+		
+		<div id="div3"></div>
+		<a href="#" class = "cancel">取消</a><a href="#" class = "determine">确定</a>
+	</div>
 </body>
 <script>
 	$(".dream").hover(function(){	
@@ -273,5 +310,49 @@
 	 },function(){
         $(this).removeClass("swing");
     });
+
+
+
+
+	 $(".dream").click(function(){
+	 	$(".popup").css("display","block");
+	 	$(".lala").val("");
+	 });
+	 $(".cancel").click(function(){
+	 	$(".popup").css("display","none");
+	 });
+
+	  $(".xx_div").click(function(){
+	 	$(".jihua").css("display","block");
+	 	$(".lala").val("");
+	 });
+	 $(".cancel").click(function(){
+	 	$(".jihua").css("display","none");
+	 });
+
+	 $(".xx_div11").click(function(){
+	 	$(".sub_text").css("display","block");
+	 });
+	 $(".cancel").click(function(){
+	 	$(".sub_text").css("display","none");
+	 });
+ 		var E = window.wangEditor
+    	var editor = new E('#div3')
+    	// 自定义菜单配置
+    	editor.customConfig.menus = [
+        'bold',  // 粗体
+	    'italic',  // 斜体
+	    'underline',  // 下划线
+	    'strikeThrough',  // 删除线
+	    'foreColor',  // 文字颜色
+	    'backColor',  // 背景颜色
+		'justify',  // 对齐方式
+	    'quote',  // 引用
+	    'list',
+	    'emoticon',  // 表情
+	    'image',  // 插入图片
+    	]
+    editor.create()
+
 </script>
 </html>
